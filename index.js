@@ -10,8 +10,9 @@ const posts = [
   "Using Vue.js for small projects",
   "Angular vs React vs Vue comparison"
 ];
-const countH = document.querySelector(".count")
-const postH = document.getElementById("result")
+const countH = document.querySelector(".count");
+const postH = document.getElementById("results");
+const searchBox = document.getElementById("searchBox");
 function renderPosts(postsArray, keyword = ""){
     let html = ""
     let count = 0
@@ -28,3 +29,7 @@ postH.innerHTML = html
 }
 
 renderPosts(posts)
+
+searchBox.addEventListener("input", function(e){
+    console.log("input value", e.target.value)
+})
