@@ -31,5 +31,6 @@ postH.innerHTML = html
 renderPosts(posts)
 
 searchBox.addEventListener("input", function(e){
-    console.log("input value", e.target.value)
+     const keyword = e.target.value.trim();
+     renderPosts(posts, keyword)
 })
