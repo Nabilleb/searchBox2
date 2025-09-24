@@ -18,3 +18,8 @@ h2{
     margin: 10px 0;
     font-weight: bold;
 }
+
+.highlight{
+    background: yellow;
+    font-weight: bold;
+}
