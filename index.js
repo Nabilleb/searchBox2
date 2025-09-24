@@ -1,4 +1,4 @@
-dconst posts = [
+const posts = [
   "Understanding the difference between grid-template and flexbox",
   "A guide to responsive web design",
   "Mastering CSS Grid layout",
@@ -10,11 +10,12 @@ dconst posts = [
   "Using Vue.js for small projects",
   "Angular vs React vs Vue comparison"
 ];
-
+const countH = document.querySelector(".count")
+const postH = document.getElementById("result")
 function renderPosts(postsArray, keyword = ""){
     let html = ""
     let count = 0
-    postsArray.array.forEach(post => {
+    postsArray.forEach(post => {
         if(post.toLowerCase().includes(keyword.toLowerCase())){
             count++
             const regex = new RegExp(`(${keyword})`,"gi")
@@ -22,4 +23,8 @@ function renderPosts(postsArray, keyword = ""){
             html += `<div class="post">${highlighted}</div>`;
         }
     });
+countH.textContent = count > 0 ? `${count} posts were found`: "No post were found"
+postH.innerHTML = html
 }
+
+renderPosts(posts)
