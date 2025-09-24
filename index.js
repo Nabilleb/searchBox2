@@ -10,3 +10,13 @@ const posts = [
   "Using Vue.js for small projects",
   "Angular vs React vs Vue comparison"
 ];
+
+function renderPosts(postsArray, keyword = ""){
+    let html = ""
+    let count = 0
+    postsArray.array.forEach(post => {
+        if(post.toLowerCase().includes(keyword.toLowerCase())){
+            count++
+        }
+    });
+}
