@@ -1,4 +1,4 @@
-const posts = [
+dconst posts = [
   "Understanding the difference between grid-template and flexbox",
   "A guide to responsive web design",
   "Mastering CSS Grid layout",
@@ -17,6 +17,9 @@ function renderPosts(postsArray, keyword = ""){
     postsArray.array.forEach(post => {
         if(post.toLowerCase().includes(keyword.toLowerCase())){
             count++
+            const regex = new RegExp(`(${keyword})`,"gi")
+            const highlighted = post.replace(regex,`<span class="highlight">$1</span>`);
+            html += `<div class="post">${highlighted}</div>`;
         }
     });
 }
